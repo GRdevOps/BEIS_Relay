@@ -11,7 +11,7 @@ namespace BEIS_message_relay
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://schemas.xmlsoap.org/soap/envelope/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://schemas.xmlsoap.org/soap/envelope/", IsNullable = false)]
-    public partial class XMLModel
+    public partial class Envelope
     {
 
         private EnvelopeBody bodyField;

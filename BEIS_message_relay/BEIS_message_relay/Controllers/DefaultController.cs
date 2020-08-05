@@ -28,14 +28,14 @@ namespace BEIS_message_relay.Controllers
         public String Post()
         {
         // XMLModel is a custom class created by Visual Studio from an XML Document
-        XMLModel myObject;
+        Envelope myObject;
 
             // Convert incoming XML into an XMLModel object
             using (StreamReader reader = new StreamReader(Request.Body, Encoding.UTF8))
             {
-                var mySerializer = new XmlSerializer(typeof(XMLModel));
+                var mySerializer = new XmlSerializer(typeof(Envelope));
 
-                myObject = (XMLModel)mySerializer.Deserialize(reader);
+                myObject = (Envelope)mySerializer.Deserialize(reader);
             }
             
             var user = JsonConvert.SerializeObject(new JSON_Message(new BannerUser(myObject)));

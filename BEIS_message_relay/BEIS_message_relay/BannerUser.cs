@@ -23,8 +23,8 @@ namespace BEIS_message_relay
         public String OU { get; set; }
         public List<String> Roles { get; set; }
 
-        // Map attributes to the XMLModel class here
-        public BannerUser(XMLModel xml)
+        // Map attributes to the Envelope class here
+        public BannerUser(Envelope xml)
         {
             this.UDCIdentifier = xml.Body.modifyRequest.modification.
                 data.UDCIdentity.UDCIdentifier;
@@ -43,6 +43,9 @@ namespace BEIS_message_relay
 
             this.OU = xml.Body.modifyRequest.modification.
                 data.UDCIdentity.Extension.Where(t => t.name == "OU").First().value;
+
+            // Must initialize before the loop for Lists
+            this.Roles = new List<string>();
 
             foreach (var role in xml.Body.modifyRequest.modification.
                 data.UDCIdentity.InstitutionRoles)
