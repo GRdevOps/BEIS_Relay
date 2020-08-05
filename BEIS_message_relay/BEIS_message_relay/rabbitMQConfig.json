@@ -1,0 +1,9 @@
+{
+  "rabbitMQUser": "guest",
+  "rabbitMQUserPassword": "password",
+  "rabbitMQVirtualHost": "/",
+  "rabbitMQPort": "5672",
+  "rabbitMQHost": "172.23.247.245",
+  "rabbitMQExchange": "default",
+  "rabbitMQRoutingKey": ""
+}
